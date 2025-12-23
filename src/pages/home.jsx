@@ -99,7 +99,7 @@ export default function Home({ isPageActive, goTo }) {
 
                 <div className="present-in-macbook">
                     <img className="device" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/macbook.png" alt="macbook-image"/>
-                    <img className="image" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/background/Low-q_background.jpeg" alt="" />
+                    <img className="image" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/background/backhround-top_lowq.png" alt="" />
                 </div>
                 
             </section>
@@ -107,7 +107,7 @@ export default function Home({ isPageActive, goTo }) {
 
                 <div className="present-in-iPhone">
                     <img className="device" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/iPhone.png" alt="iPhone-image"/>
-                    <img className="image" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/background/Low-q_background.jpeg" alt="" />
+                    <img className="image" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/background/backhround-top_lowq.png" alt="" />
                 </div>
 
             </section>
@@ -115,7 +115,7 @@ export default function Home({ isPageActive, goTo }) {
                 
                 <div className="present-in-iPhone">
                     <img className="device" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/iPhone.png" alt="iPhone-image"/>
-                    <img className="image" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/background/Low-q_background.jpeg" alt="" />
+                    <img className="image" src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/background/backhround-top_lowq.png" alt="" />
                 </div>
                 
             </section>

@@ -102,28 +102,6 @@ html, body, #app {
     background-position: 50% 200%;
 }
 
-/* Cibler l'ensemble de la barre de défilement */
-::-webkit-scrollbar {
-    width: 10px; /* Ici, 10px fonctionnera ! */
-    height: 10px;
-}
-
-/* Cibler le glisseur (le pouce) */
-::-webkit-scrollbar-thumb {
-    background: var(--primary); /* La couleur que vous avez spécifiée */
-    border-radius: 5px; /* Pour un aspect plus doux */
-}
-
-/* Cibler la "piste" (la zone derrière le glisseur) */
-::-webkit-scrollbar-track {
-    background: rgba(60, 60, 60, 0); /* La couleur transparente que vous avez spécifiée */
-}
-
-/* Optionnel: style au survol */
-::-webkit-scrollbar-thumb:hover {
-    background: darker-shade-of-primary; /* Changer légèrement la couleur au survol */
-}
-
 #app {
     display: flex;
     flex-direction: column;
@@ -260,6 +238,15 @@ header {
             }
         }
     }
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(100vh - 75%);
+        left: 0;
+        width: 100%;
+        height: 75%;
+        background: linear-gradient(to top, var(--background) 5%, transparent);
+    }
 }
 
 #main {
@@ -301,7 +288,7 @@ header {
         }
 
         & .scroll-bubbles {
-            display: none;
+            display: none !important;
             z-index: 3;
             position: fixed;
             top: 0;
@@ -342,6 +329,16 @@ header {
                     padding: 12px 20px;
                     text-align: center;
                 }
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(100px);
+                mask-image: linear-gradient(to top, black, transparent 8%, transparent);
             }
             & .bubble1 {
                 left: 13%;
@@ -547,18 +544,31 @@ header {
             position: relative;
             display: flex;
             width: 100%;
+            overflow-y: hidden;
             & h1 {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                text-shadow: 0px 0px 10px var(--accent);
-                color: var(--text_lo);
+                background: linear-gradient(to right, var(--text_lo) 45%, var(--text_hi) 50%, var(--text_lo) 55%);
+                background-size: 1000px;
+                background-clip: text;
+                background-repeat: no-repeat;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: shine;
+                animation-timeline: scroll();
+                animation-range: 8% 20%;
+
+                z-index: 1;
+
+                text-shadow: 0 0 15px var(--accent);
+
                 text-align: center;
+                text-decoration: none;
             }
             & .wave-fade {
                 width: 100%;
-                height: auto;
                 & path {
                     color: var(--background_bis);
                 }
@@ -1763,6 +1773,37 @@ footer {
                     & .card {
                         min-width: 20vw;
                     }
+                }
+            }
+        }
+        & .transition-1 {
+            & .wave-fade {
+                
+                & path {
+                    color: var(--background_bis);
+                }
+                & .a, .h {
+                    color: var(--background)
+                }
+                & .b {
+                    filter: brightness(0.8);
+                }
+                & .c {
+                    filter: brightness(0.7);
+                }
+                & .d {
+                    filter: brightness(0.6);
+                    fill: url('#image-fill-trans-1'); 
+                }
+                & .e {
+                    filter: brightness(0.6);
+                    fill: url('#image-fill-trans-1'); 
+                }
+                & .f {
+                    filter: brightness(0.7);
+                }
+                & .g {
+                    filter: brightness(0.8);
                 }
             }
         }
