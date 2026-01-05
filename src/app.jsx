@@ -12,9 +12,9 @@ export default function App() {
   );
   const [page, setPage] = useState(() => {
     const hash = window.location.hash.replace("#", "");
-    return hash && 
-           (hash === "home" || hash === "products" || hash === "contact" || hash === "connect") 
-           ? hash : "home"; 
+    return hash &&
+      (hash === "home" || hash === "products" || hash === "contact" || hash === "connect")
+      ? hash : "home";
   });
 
   const indicatorRef = useRef(null);
@@ -28,14 +28,14 @@ export default function App() {
 
   const findActiveButton = () => {
     if (page === 'connect') {
-      return null; 
+      return null;
     }
-    
+
     if (buttonRefs.hasOwnProperty(page)) {
-        const buttonRef = buttonRefs[page]?.current;
-        if (buttonRef && indicatorRef.current && navRef.current) {
-            return buttonRef;
-        }
+      const buttonRef = buttonRefs[page]?.current;
+      if (buttonRef && indicatorRef.current && navRef.current) {
+        return buttonRef;
+      }
     }
     return null;
   };
@@ -44,10 +44,10 @@ export default function App() {
     const indicator = indicatorRef.current;
 
     if (!indicator || !element) {
-        if (indicator) {
-          indicator.style.width = '0px';
-        }
-        return;
+      if (indicator) {
+        indicator.style.width = '0px';
+      }
+      return;
     }
 
     const newLeft = element.offsetLeft;
@@ -59,31 +59,31 @@ export default function App() {
 
   const updateIndicatorPosition = () => {
     window.requestAnimationFrame(() => {
-        const activeButton = findActiveButton();
-        moveIndicator(activeButton);
+      const activeButton = findActiveButton();
+      moveIndicator(activeButton);
     });
   };
 
   useEffect(() => {
     updateIndicatorPosition();
-  }, [page]); 
+  }, [page]);
 
   useEffect(() => {
     initTheme();
     setLocalTheme(localStorage.getItem("theme") || "default");
-    
+
     const onHashChange = () => {
       const h = window.location.hash.replace("#", "");
       if (h) setPage(h);
     };
-    
+
     window.addEventListener("hashchange", onHashChange);
     updateIndicatorPosition();
 
     return () => {
       window.removeEventListener("hashchange", onHashChange);
     }
-  }, []); 
+  }, []);
 
   const handleThemeChange = (e) => {
     const value = e.target.value;
@@ -98,7 +98,7 @@ export default function App() {
       setLocalTheme(value);
     }
   };
-  
+
   const goTo = (p) => {
     window.location.hash = p;
   };
@@ -109,7 +109,7 @@ export default function App() {
     const pageProps = {
       goTo: goTo,
       isPageActive: isPageActive,
-      buttonRefs: buttonRefs, 
+      buttonRefs: buttonRefs,
     };
 
     switch (page) {
@@ -121,7 +121,7 @@ export default function App() {
         return <Contact {...pageProps} />;
       case "home":
       default:
-        return <Home {...pageProps} />; 
+        return <Home {...pageProps} />;
     }
   };
 
@@ -133,7 +133,7 @@ export default function App() {
             <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/plintzy-logo.png" alt="plintzy" />
           </div>
           <div className="more">
-            <div className="connexion blur-box logo blur-box-interactive"  onClick={() => goTo("connect")}>person<span>Profile</span></div>
+            <div className="connexion blur-box logo blur-box-interactive" onClick={() => goTo("connect")}>person<span>Profile</span></div>
 
             <div className="settings blur-box blur-box-interactive">
               <div className="theme">
@@ -150,27 +150,27 @@ export default function App() {
         </div>
         <div className="bottom">
           <nav className="pages blur-box" aria-label="Main navigation" ref={navRef}>
-            <a 
-              className={`button ${isPageActive("home")}`} 
+            <a
+              className={`button ${isPageActive("home")}`}
               href="#home"
               onClick={() => goTo("home")}
               ref={buttonRefs.home}
             >Maison</a>
             <div className="space"></div>
-            <a 
-              className={`button ${isPageActive("products")}`} 
+            <a
+              className={`button ${isPageActive("products")}`}
               href="#products"
               onClick={() => goTo("products")}
               ref={buttonRefs.products}
             >Produits</a>
             <div className="space"></div>
-            <a 
-              className={`button ${isPageActive("contact")}`} 
+            <a
+              className={`button ${isPageActive("contact")}`}
               href="#contact"
               onClick={() => goTo("contact")}
               ref={buttonRefs.contact}
             >Contact</a>
-            
+
             <div id="indicator" ref={indicatorRef}></div>
           </nav>
         </div>
@@ -184,7 +184,7 @@ export default function App() {
         <p>Plintzy - 2025</p>
         <p>Gabriel, Ewenn, Jean & Zachari</p>
         <br />
-        <div className="link" onClick={() => window.open("https://data.inpi.fr/search?advancedSearch=%257B%257D&filter=%257B%257D&nbResultsPerPage=20&order=asc&page=1&q=plintzy","_blank")}>
+        <div className="link" onClick={() => window.open("https://data.inpi.fr/search?advancedSearch=%257B%257D&filter=%257B%257D&nbResultsPerPage=20&order=asc&page=1&q=plintzy", "_blank")}>
           <div className="logo">open_in_new</div>
           <div className="text">https://data.inpi.fr</div>
         </div>
