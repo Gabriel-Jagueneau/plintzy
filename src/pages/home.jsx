@@ -52,9 +52,6 @@ export default function Home({ isPageActive, goTo }) {
                             <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/logo/logo-pepite-eca.png" alt=""/>
                         </div>
                         <div className="card">
-                            <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/logo/logo-chaire-agrotic.png" alt=""/>
-                        </div>
-                        <div className="card">
                             <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/logo/logo_bsa.png" alt=""/>
                         </div>
                     </div>
@@ -64,9 +61,6 @@ export default function Home({ isPageActive, goTo }) {
                         </div>
                         <div className="card">
                             <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/logo/logo-pepite-eca.png" alt=""/>
-                        </div>
-                        <div className="card">
-                            <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/logo/logo-chaire-agrotic.png" alt=""/>
                         </div>
                         <div className="card">
                             <img src="https://raw.githubusercontent.com/Gabriel-Jagueneau/plintzy/refs/heads/main/storage/images/logo/logo_bsa.png" alt=""/>
