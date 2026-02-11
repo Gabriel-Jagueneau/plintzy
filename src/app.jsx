@@ -180,6 +180,8 @@ export default function App() {
         {renderPage()}
       </main>
 
+      <div id="fade_bottom"></div>
+
       <footer>
         <p>Plintzy - 2025</p>
         <p>Gabriel, Ewenn, Jean & Zachari</p>
