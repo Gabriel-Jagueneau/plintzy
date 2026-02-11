@@ -288,7 +288,7 @@ header {
         }
 
         & .scroll-bubbles {
-            display: none !important;
+            display: flex !important;
             z-index: 3;
             position: fixed;
             top: 0;
